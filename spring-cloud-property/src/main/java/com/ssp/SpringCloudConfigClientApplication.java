@@ -20,4 +20,15 @@ public class SpringCloudConfigClientApplication {
         SpringApplication.run(SpringCloudConfigClientApplication.class, args);
     }
 
+    @Configuration
+    @Order(Ordered.HIGHEST_PRECEDENCE)
+    public static class MyPropertySourceLocator implements PropertySourceLocator {
+        @Override
+        public PropertySource<?> locate(Environment environment) {
+            Map<String, Object> source = new HashMap<>();
+            source.put("server.port", "9090");
+            return new MapPropertySource("my-property-source", source);
+        }
+    }
+
 }

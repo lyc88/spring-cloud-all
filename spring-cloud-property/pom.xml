@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-cloud-config-client</artifactId>
+    <artifactId>spring-cloud-property</artifactId>
 
 
     <dependencies>
@@ -17,6 +17,5 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
-
     </dependencies>
 </project>
