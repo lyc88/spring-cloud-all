@@ -15,12 +15,7 @@ public class SpringEventListenerDemo {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context
                 = new AnnotationConfigApplicationContext();
-        context.addApplicationListener(new ApplicationListener<MyApplicationEvent>() {
-            @Override
-            public void onApplicationEvent(MyApplicationEvent applicationEvent) {
-                System.out.println("事件源：" + applicationEvent.getSource());
-            }
-        });
+        context.addApplicationListener((ApplicationListener<MyApplicationEvent>) applicationEvent -> System.out.println("事件源：" + applicationEvent.getSource()));
         context.refresh();
         context.publishEvent(new MyApplicationEvent("hello"));
         context.publishEvent(new MyApplicationEvent("你好"));
