@@ -9,6 +9,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>spring-cloud-config-client</module>
+        <module>spring-cloud-netflix</module>
+        <module>spring-cloud-config-server</module>
+        <module>spring-cloud-property</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -25,6 +28,7 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Edgware.RELEASE</spring-cloud.version>
     </properties>
+
 
     <dependencies>
         <dependency>
