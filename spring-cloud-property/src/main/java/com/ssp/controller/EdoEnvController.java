@@ -10,12 +10,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * TODO 记得写注释
+ * Environment 扩展
  * @author: sunshaoping
  * @date: Create by in 下午6:19 2018/1/4
  */
 @RestController
-
 public class EdoEnvController {
 
     private final Environment environment;
@@ -24,8 +23,7 @@ public class EdoEnvController {
     public EdoEnvController(Environment environment) {this.environment = environment;}
 
     @GetMapping("/echo/env/{name}")
-    public Object
-    getEnv(@PathVariable("name") String name) {
+    public Object getEnv(@PathVariable("name") String name) {
         Map<String, String> data = new HashMap<>();
         data.put(name, environment.getProperty(name));
         return data;
