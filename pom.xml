@@ -8,10 +8,12 @@
     <artifactId>spring-cloud-all</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>spring-cloud-config-client</module>
-        <module>spring-cloud-netflix</module>
-        <module>spring-cloud-config-server</module>
-        <module>spring-cloud-property</module>
+        <module>config-server</module>
+        <module>eureka-server</module>
+        <module>spring-cloud-sample</module>
+        <module>service-provider</module>
+        <module>service-consumer</module>
+        <module>spring-cloud-sample</module>
     </modules>
     <packaging>pom</packaging>
 
