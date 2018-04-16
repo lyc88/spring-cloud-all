@@ -13,9 +13,20 @@
     <description>服务消费方</description>
 
     <dependencies>
+        <!--
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+        -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ssp</groupId>
+            <artifactId>service-provider-api</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>

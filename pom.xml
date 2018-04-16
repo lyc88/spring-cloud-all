@@ -14,6 +14,7 @@
         <module>service-provider</module>
         <module>service-consumer</module>
         <module>spring-cloud-sample</module>
+        <module>zuul</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -61,7 +62,7 @@
         </dependencies>
     </dependencyManagement>
 
-    <build>
+ <!--   <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -69,5 +70,5 @@
             </plugin>
         </plugins>
     </build>
-
+-->
 </project>

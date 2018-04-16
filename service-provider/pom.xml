@@ -13,18 +13,13 @@
     <packaging>pom</packaging>
     <description>服务提供方</description>
     <modules>
-        <module>provider-api</module>
+        <module>service-provider-api</module>
         <module>provider</module>
     </modules>
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.ssp</groupId>
-            <artifactId>provider-api</artifactId>
-            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>
