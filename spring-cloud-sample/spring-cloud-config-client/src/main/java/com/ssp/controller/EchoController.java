@@ -14,11 +14,19 @@ import org.springframework.web.bind.annotation.RestController;
 public class EchoController {
 
 
-    @Value("${my.name}")
+//    @Value("${my.name}")
     private String myName;
+
+    @Value("${java.vendor}")
+    private String javaVendor;
 
     @GetMapping("my-name")
     public String getMyName() {
         return myName;
+    }
+
+    @GetMapping("java-vendor")
+    public String javaVendor(){
+        return javaVendor;
     }
 }
