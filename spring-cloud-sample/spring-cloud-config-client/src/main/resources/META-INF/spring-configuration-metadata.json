@@ -1,0 +1,52 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "org.springframework.cloud.zookeeper.config.ZookeeperConfigProperties",
+      "name": "spring.cloud.zookeeper.config",
+      "type": "org.springframework.cloud.zookeeper.config.ZookeeperConfigProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "org.springframework.cloud.zookeeper.config.ZookeeperConfigProperties",
+      "defaultValue": "application",
+      "name": "spring.cloud.zookeeper.config.default-context",
+      "description": "The name of the default context",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.cloud.zookeeper.config.ZookeeperConfigProperties",
+      "defaultValue": true,
+      "name": "spring.cloud.zookeeper.config.enabled",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.cloud.zookeeper.config.ZookeeperConfigProperties",
+      "defaultValue": true,
+      "name": "spring.cloud.zookeeper.config.fail-fast",
+      "description": "Throw exceptions during config lookup if true, otherwise, log warnings.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.cloud.zookeeper.config.ZookeeperConfigProperties",
+      "defaultValue": ",",
+      "name": "spring.cloud.zookeeper.config.profile-separator",
+      "description": "Separator for profile appended to the application name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.cloud.zookeeper.config.ZookeeperConfigProperties",
+      "defaultValue": "config",
+      "name": "spring.cloud.zookeeper.config.root",
+      "description": "Root folder where the configuration for Zookeeper is kept",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": true,
+      "name": "spring.cloud.zookeeper.config.watcher.enabled",
+      "description": "Throw exceptions during config lookup if true, otherwise, log warnings.",
+      "type": "java.lang.Boolean"
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 package com.ssp.controller;
 
+import com.fasterxml.jackson.databind.util.BeanUtil;
+import com.ssp.config.Address;
 import com.ssp.config.Person;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,17 +9,19 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.core.env.Environment;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author: sunshaoping
  * @date: Create by in 下午2:18 2018/1/10
  */
-@RefreshScope
 @RestController
 @EnableConfigurationProperties(Person.class)
-public class EchoController {
+@RequestMapping("echo2")
+public class Echo2Controller {
 
     private final Person person;
 
@@ -31,7 +35,7 @@ public class EchoController {
     private final Environment environment;
 
     @Autowired
-    public EchoController(Person person, Environment environment) {
+    public Echo2Controller(Person person, Environment environment) {
         this.person = person;
         this.environment = environment;
     }
