@@ -16,7 +16,6 @@ import java.util.List;
  * @author: sunshaoping
  * @date: Create by in 下午3:15 2018/1/19
  */
-
 @RestController
 @RequestMapping("consumer")
 public class PersonConsumerController {
@@ -33,7 +32,6 @@ public class PersonConsumerController {
 
     @PostMapping
     public PersonResponse save(@RequestBody PersonRequest personRequest) {
-
         return personFeign.save(personRequest);
     }
 
@@ -41,7 +39,6 @@ public class PersonConsumerController {
     public Collection<PersonResponse> findAll() {
         return personFeign.findAll();
     }
-
 
     @GetMapping("service-instances")
     public List<ServiceInstance> serviceInstances(String serviceId) {

@@ -4,6 +4,7 @@ spring:
       uri: http://localhost:9091/
     zookeeper:
       connect-string: localhost:2181
+
 #      dependencies:
 
 #        service-provider:

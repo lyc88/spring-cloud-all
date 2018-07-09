@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.concurrent.TimeUnit;
 
 /**
  * person controller
@@ -16,7 +17,7 @@ import java.util.Collection;
  */
 @RestController
 @RequestMapping("/person")
-public class PersonController implements PersonFeign {
+public class PersonController  {
 
     private final PersonService personService;
 
@@ -24,15 +25,19 @@ public class PersonController implements PersonFeign {
     public PersonController(PersonService personService) {this.personService = personService;}
 
     @PostMapping
-    @Override
     public PersonResponse save(@RequestBody PersonRequest personRequest) {
 
         return personService.save(personRequest);
     }
 
     @GetMapping
-    @Override
     public Collection<PersonResponse> findAll() {
+        System.out.println("请求一次");
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return personService.findAll();
     }
 }

@@ -11,7 +11,6 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
  * @date: Create by in 下午5:31 2018/1/10
  */
 @EnableCircuitBreaker
-//@EnableHystrix
 @SpringBootApplication
 public class HystrixClientApplication {
     public static void main(String[] args) {
