@@ -6,11 +6,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
-import org.springframework.cloud.stream.annotation.Input;
-import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Processor;
-import org.springframework.cloud.stream.messaging.Sink;
 import org.springframework.context.annotation.Bean;
 import org.springframework.integration.annotation.InboundChannelAdapter;
 import org.springframework.integration.annotation.Poller;
@@ -18,7 +15,6 @@ import org.springframework.integration.core.MessageSource;
 import org.springframework.integration.support.MessageBuilder;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
-import org.springframework.messaging.SubscribableChannel;
 
 import java.util.Date;
 
@@ -49,7 +45,7 @@ public class StreamApplication implements CommandLineRunner {
     }
 
     // 监听 binding 为 OrderIntf.INPUT_ORDER 的消息
-//    @StreamListener(OrderProcessor.INPUT_ORDER)
+    @StreamListener(OrderProcessor.INPUT_ORDER)
     public void inputOrder(Order order) {
         System.out.println("=====订单监听收到=====");
         System.out.println("订单编号：" + order.getOrderNum());
@@ -66,10 +62,10 @@ public class StreamApplication implements CommandLineRunner {
 
 
     @Override
-    public void run(String... strings) throws Exception {
+    public void run(String... strings) {
         // 字符串类型发送MQ
         System.out.println("字符串信息发送");
-        output.send(MessageBuilder.withPayload("大家好").build());
+        //        output.send(MessageBuilder.withPayload("大家好").build());
 
         // 使用 定义的接口的方式来发送
         System.out.println("新增产品发送");

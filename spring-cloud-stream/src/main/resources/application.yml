@@ -7,6 +7,7 @@ spring:
       bindings:
         input:
           destination: mqTestDefault    # 目的，对应 MQ 是 exchange， 生成临时队列
+          group: processor
         output:
           destination: mqTestDefault
           contentType: text/plain
@@ -16,7 +17,7 @@ spring:
           group: orderReceiveGroup1     # 具体分组 对应 MQ 是 队列名称 并且持久化队列
         outputOrder:
           destination: mqTestOrder
-#          contentType: text/plain      # 实体 json string 在传递的类型装换 查看 http://docs.spring.io/spring-cloud-stream/docs/Chelsea.SR2/reference/htmlsingle/index.html#mime-types-and-java-types
+          contentType: application/json     # 实体 json string 在传递的类型装换 查看 http://docs.spring.io/spring-cloud-stream/docs/Chelsea.SR2/reference/htmlsingle/index.html#mime-types-and-java-types
         inputProductAdd:
           destination: mqTestProduct
           group: addProductHandler      # 拥有 group 默认会持久化队列
